@@ -2,6 +2,6 @@ Flask
 gunicorn
 gTTS
 yt-dlp
-moviepy
 requests
+moviepy==1.0.3
 
