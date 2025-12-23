@@ -1,5 +1,7 @@
 Flask
 gunicorn
-requests
-aiohttp
 gTTS
+yt-dlp
+moviepy
+requests
+
