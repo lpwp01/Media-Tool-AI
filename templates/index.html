@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI CREATIVE STUDIO 3.0</title>
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <div class="bg-animate"></div>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="logo">AI<span>STUDIO</span></div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#tts-sec">TTS</a></li>
+            <li><a href="#dl-sec">Downloader</a></li>
+            <li><a href="#ai-sec">AI Video</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section (Home) -->
+    <section id="home" class="hero-sec">
+        <div class="hero-content">
+            <h1>Welcome to <br><span>AI Creative Studio</span></h1>
+            <p>यहाँ आप टेक्स्ट से आवाज़ बना सकते हैं, वीडियो डाउनलोड कर सकते हैं और AI से वीडियो क्रिएट कर सकते हैं।</p>
+            <div class="hero-btns">
+                <a href="#tts-sec" class="btn btn-tts">Explore Tools</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 1. Text to Speech Section -->
+    <section id="tts-sec">
+        <h2 class="tts-h2"><i class="fas fa-microphone-alt"></i> 1. Text To Speech</h2>
+        <p class="desc">अपनी कहानियों को आवाज़ दें। यहाँ आप जो भी लिखेंगे, AI उसे एक मधुर आवाज़ में बदल देगा।</p>
+        <div class="tool-card">
+            <textarea id="tts-input" placeholder="नमस्ते, यहाँ अपना लंबा टेक्स्ट लिखें जिसे आप आवाज़ में बदलना चाहते हैं..."></textarea>
+            <button class="btn btn-tts" onclick="handleTool('tts')">Generate MP3 Audio</button>
+        </div>
+    </section>
+
+    <!-- 2. Universal Downloader Section -->
+    <section id="dl-sec">
+        <h2 class="dl-h2"><i class="fas fa-cloud-download-alt"></i> 2. Pro Downloader</h2>
+        <p class="desc">YouTube या किसी भी सोशल मीडिया का लिंक यहाँ डालें और उसे Video या MP3 में तुरंत डाउनलोड करें।</p>
+        <div class="tool-card">
+            <input type="text" id="dl-url" placeholder="वीडियो लिंक यहाँ पेस्ट करें (https://...)">
+            <div class="btn-row">
+                <button class="btn btn-dl-audio" onclick="handleTool('mp3')">Download MP3</button>
+                <button class="btn btn-dl-video" onclick="handleTool('video')">Download Video</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. AI Video Creator Section -->
+    <section id="ai-sec">
+        <h2 class="ai-h2"><i class="fas fa-magic"></i> 3. AI Video Creator</h2>
+        <p class="desc">बस एक प्रॉम्प्ट लिखें और देखें जादू! AI खुद इमेज बनाएगा और पीछे आपकी दी हुई आवाज़ लगाएगा।</p>
+        <div class="tool-card">
+            <textarea id="ai-prompt" placeholder="यहाँ विस्तार में प्रॉम्प्ट लिखें: जैसे - A futuristic city in 2050 with flying cars and neon lights..."></textarea>
+            <button class="btn btn-ai" onclick="handleTool('ai')">Create AI Video Magic</button>
+        </div>
+    </section>
+
+    <!-- Modal for Result -->
+    <div id="res-modal" class="modal">
+        <div class="modal-content">
+            <h3>SUCCESS!</h3>
+            <div class="preview-box" id="preview-area"></div>
+            <a id="down-btn" class="btn btn-tts" style="display:block; text-decoration:none;" download>Download Now</a>
+            <button onclick="closeModal()" class="close-btn">Close Window</button>
+        </div>
+    </div>
+
+    <!-- Status Loading -->
+    <div id="loader" class="loader-box">
+        <div class="spinner"></div>
+        <b>AI is Working... 🚀</b>
+    </div>
+
+    <script src="/static/js/script.js"></script>
+</body>
+</html>
